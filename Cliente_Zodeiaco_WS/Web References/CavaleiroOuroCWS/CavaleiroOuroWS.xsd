@@ -1,19 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://ws/" targetNamespace="http://ws/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="IOException" type="tns:IOException" />
+  <xs:element name="MalformedURLException" type="tns:MalformedURLException" />
+  <xs:element name="ParseException" type="tns:ParseException" />
   <xs:element name="msgDia" type="tns:msgDia" />
   <xs:element name="msgDiaResponse" type="tns:msgDiaResponse" />
   <xs:element name="qualCavaleiro" type="tns:qualCavaleiro" />
   <xs:element name="qualCavaleiroResponse" type="tns:qualCavaleiroResponse" />
   <xs:complexType name="msgDia">
-    <xs:sequence />
+    <xs:sequence>
+      <xs:element minOccurs="0" name="signo" type="xs:string" />
+    </xs:sequence>
   </xs:complexType>
   <xs:complexType name="msgDiaResponse">
     <xs:sequence>
-      <xs:element minOccurs="0" name="return" type="tns:messageObject" />
+      <xs:element minOccurs="0" name="return" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="messageObject">
-    <xs:sequence />
+  <xs:complexType name="IOException">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="message" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="MalformedURLException">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="message" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ParseException">
+    <xs:sequence>
+      <xs:element name="errorType" type="xs:int" />
+      <xs:element minOccurs="0" name="message" type="xs:string" />
+      <xs:element name="position" type="xs:int" />
+      <xs:element minOccurs="0" name="unexpectedObject" type="xs:anyType" />
+    </xs:sequence>
   </xs:complexType>
   <xs:complexType name="qualCavaleiro">
     <xs:sequence>

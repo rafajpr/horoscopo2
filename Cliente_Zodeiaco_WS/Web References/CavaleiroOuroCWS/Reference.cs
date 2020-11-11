@@ -110,22 +110,24 @@ namespace Cliente_Zodeiaco_WS.CavaleiroOuroCWS {
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace="http://ws/", ResponseNamespace="http://ws/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         [return: System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public messageObject msgDia() {
-            object[] results = this.Invoke("msgDia", new object[0]);
-            return ((messageObject)(results[0]));
+        public string msgDia([System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)] string signo) {
+            object[] results = this.Invoke("msgDia", new object[] {
+                        signo});
+            return ((string)(results[0]));
         }
         
         /// <remarks/>
-        public void msgDiaAsync() {
-            this.msgDiaAsync(null);
+        public void msgDiaAsync(string signo) {
+            this.msgDiaAsync(signo, null);
         }
         
         /// <remarks/>
-        public void msgDiaAsync(object userState) {
+        public void msgDiaAsync(string signo, object userState) {
             if ((this.msgDiaOperationCompleted == null)) {
                 this.msgDiaOperationCompleted = new System.Threading.SendOrPostCallback(this.OnmsgDiaOperationCompleted);
             }
-            this.InvokeAsync("msgDia", new object[0], this.msgDiaOperationCompleted, userState);
+            this.InvokeAsync("msgDia", new object[] {
+                        signo}, this.msgDiaOperationCompleted, userState);
         }
         
         private void OnmsgDiaOperationCompleted(object arg) {
@@ -152,15 +154,6 @@ namespace Cliente_Zodeiaco_WS.CavaleiroOuroCWS {
             }
             return false;
         }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://ws/")]
-    public partial class messageObject {
     }
     
     /// <remarks/>
@@ -207,10 +200,10 @@ namespace Cliente_Zodeiaco_WS.CavaleiroOuroCWS {
         }
         
         /// <remarks/>
-        public messageObject Result {
+        public string Result {
             get {
                 this.RaiseExceptionIfNecessary();
-                return ((messageObject)(this.results[0]));
+                return ((string)(this.results[0]));
             }
         }
     }

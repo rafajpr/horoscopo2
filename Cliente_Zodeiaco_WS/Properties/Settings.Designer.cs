@@ -26,20 +26,20 @@ namespace Cliente_Zodeiaco_WS.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost:8080/ZodiacoWS/CadastroWS")]
-        public string Cliente_Zodeiaco_WS_cadastroWS_CadastroWS {
+        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost:8080/ZodiacoWS/CavaleiroOuroWS")]
+        public string Cliente_Zodeiaco_WS_CavaleiroOuroWS_CavaleiroOuroWS {
             get {
-                return ((string)(this["Cliente_Zodeiaco_WS_cadastroWS_CadastroWS"]));
+                return ((string)(this["Cliente_Zodeiaco_WS_CavaleiroOuroWS_CavaleiroOuroWS"]));
             }
         }
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost:8080/ZodiacoWS/CavaleiroOuroWS")]
-        public string Cliente_Zodeiaco_WS_CavaleiroOuroWS_CavaleiroOuroWS {
+        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost:8080/ZodiacoWS/UsuarioWS")]
+        public string Cliente_Zodeiaco_WS_Usuario_CWS_UsuarioWS {
             get {
-                return ((string)(this["Cliente_Zodeiaco_WS_CavaleiroOuroWS_CavaleiroOuroWS"]));
+                return ((string)(this["Cliente_Zodeiaco_WS_Usuario_CWS_UsuarioWS"]));
             }
         }
     }

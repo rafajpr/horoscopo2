@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://ws/" targetNamespace="http://ws/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="cadastrarUsuario" type="tns:cadastrarUsuario" />
+  <xs:element name="cadastrarUsuarioResponse" type="tns:cadastrarUsuarioResponse" />
+  <xs:element name="loginUsuario" type="tns:loginUsuario" />
+  <xs:element name="loginUsuarioResponse" type="tns:loginUsuarioResponse" />
+  <xs:complexType name="loginUsuario">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="email" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="loginUsuarioResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:usuario" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="usuario">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="email" type="xs:string" />
+      <xs:element minOccurs="0" name="nickname" type="xs:string" />
+      <xs:element minOccurs="0" name="plano" type="xs:string" />
+      <xs:element minOccurs="0" name="signo" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="cadastrarUsuario">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="user" type="tns:usuario" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="cadastrarUsuarioResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

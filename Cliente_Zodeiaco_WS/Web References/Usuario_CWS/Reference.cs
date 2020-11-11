@@ -13,7 +13,7 @@
 // 
 #pragma warning disable 1591
 
-namespace Cliente_Zodeiaco_WS.Cadastro_CWS {
+namespace Cliente_Zodeiaco_WS.Usuario_CWS {
     using System;
     using System.Web.Services;
     using System.Diagnostics;
@@ -26,18 +26,18 @@ namespace Cliente_Zodeiaco_WS.Cadastro_CWS {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Web.Services.WebServiceBindingAttribute(Name="CadastroWSPortBinding", Namespace="http://ws/")]
-    public partial class CadastroWS : System.Web.Services.Protocols.SoapHttpClientProtocol {
+    [System.Web.Services.WebServiceBindingAttribute(Name="UsuarioWSPortBinding", Namespace="http://ws/")]
+    public partial class UsuarioWS : System.Web.Services.Protocols.SoapHttpClientProtocol {
         
         private System.Threading.SendOrPostCallback cadastrarUsuarioOperationCompleted;
         
-        private System.Threading.SendOrPostCallback evoluirPlanoOperationCompleted;
+        private System.Threading.SendOrPostCallback loginUsuarioOperationCompleted;
         
         private bool useDefaultCredentialsSetExplicitly;
         
         /// <remarks/>
-        public CadastroWS() {
-            this.Url = global::Cliente_Zodeiaco_WS.Properties.Settings.Default.Cliente_Zodeiaco_WS_cadastroWS_CadastroWS;
+        public UsuarioWS() {
+            this.Url = global::Cliente_Zodeiaco_WS.Properties.Settings.Default.Cliente_Zodeiaco_WS_Usuario_CWS_UsuarioWS;
             if ((this.IsLocalFileSystemWebService(this.Url) == true)) {
                 this.UseDefaultCredentials = true;
                 this.useDefaultCredentialsSetExplicitly = false;
@@ -75,61 +75,65 @@ namespace Cliente_Zodeiaco_WS.Cadastro_CWS {
         public event cadastrarUsuarioCompletedEventHandler cadastrarUsuarioCompleted;
         
         /// <remarks/>
-        public event evoluirPlanoCompletedEventHandler evoluirPlanoCompleted;
+        public event loginUsuarioCompletedEventHandler loginUsuarioCompleted;
         
         /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace="http://ws/", OneWay=true, Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public void cadastrarUsuario([System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)] usuario usuario) {
-            this.Invoke("cadastrarUsuario", new object[] {
-                        usuario});
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace="http://ws/", ResponseNamespace="http://ws/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public bool cadastrarUsuario([System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)] usuario user) {
+            object[] results = this.Invoke("cadastrarUsuario", new object[] {
+                        user});
+            return ((bool)(results[0]));
         }
         
         /// <remarks/>
-        public void cadastrarUsuarioAsync(usuario usuario) {
-            this.cadastrarUsuarioAsync(usuario, null);
+        public void cadastrarUsuarioAsync(usuario user) {
+            this.cadastrarUsuarioAsync(user, null);
         }
         
         /// <remarks/>
-        public void cadastrarUsuarioAsync(usuario usuario, object userState) {
+        public void cadastrarUsuarioAsync(usuario user, object userState) {
             if ((this.cadastrarUsuarioOperationCompleted == null)) {
                 this.cadastrarUsuarioOperationCompleted = new System.Threading.SendOrPostCallback(this.OncadastrarUsuarioOperationCompleted);
             }
             this.InvokeAsync("cadastrarUsuario", new object[] {
-                        usuario}, this.cadastrarUsuarioOperationCompleted, userState);
+                        user}, this.cadastrarUsuarioOperationCompleted, userState);
         }
         
         private void OncadastrarUsuarioOperationCompleted(object arg) {
             if ((this.cadastrarUsuarioCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.cadastrarUsuarioCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+                this.cadastrarUsuarioCompleted(this, new cadastrarUsuarioCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
         /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace="http://ws/", OneWay=true, Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public void evoluirPlano([System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)] usuario usuario) {
-            this.Invoke("evoluirPlano", new object[] {
-                        usuario});
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace="http://ws/", ResponseNamespace="http://ws/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public usuario loginUsuario([System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)] string email) {
+            object[] results = this.Invoke("loginUsuario", new object[] {
+                        email});
+            return ((usuario)(results[0]));
         }
         
         /// <remarks/>
-        public void evoluirPlanoAsync(usuario usuario) {
-            this.evoluirPlanoAsync(usuario, null);
+        public void loginUsuarioAsync(string email) {
+            this.loginUsuarioAsync(email, null);
         }
         
         /// <remarks/>
-        public void evoluirPlanoAsync(usuario usuario, object userState) {
-            if ((this.evoluirPlanoOperationCompleted == null)) {
-                this.evoluirPlanoOperationCompleted = new System.Threading.SendOrPostCallback(this.OnevoluirPlanoOperationCompleted);
+        public void loginUsuarioAsync(string email, object userState) {
+            if ((this.loginUsuarioOperationCompleted == null)) {
+                this.loginUsuarioOperationCompleted = new System.Threading.SendOrPostCallback(this.OnloginUsuarioOperationCompleted);
             }
-            this.InvokeAsync("evoluirPlano", new object[] {
-                        usuario}, this.evoluirPlanoOperationCompleted, userState);
+            this.InvokeAsync("loginUsuario", new object[] {
+                        email}, this.loginUsuarioOperationCompleted, userState);
         }
         
-        private void OnevoluirPlanoOperationCompleted(object arg) {
-            if ((this.evoluirPlanoCompleted != null)) {
+        private void OnloginUsuarioOperationCompleted(object arg) {
+            if ((this.loginUsuarioCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.evoluirPlanoCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+                this.loginUsuarioCompleted(this, new loginUsuarioCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -160,11 +164,24 @@ namespace Cliente_Zodeiaco_WS.Cadastro_CWS {
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://ws/")]
     public partial class usuario {
         
+        private string emailField;
+        
         private string nicknameField;
         
         private string planoField;
         
         private string signoField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string email {
+            get {
+                return this.emailField;
+            }
+            set {
+                this.emailField = value;
+            }
+        }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
@@ -202,11 +219,55 @@ namespace Cliente_Zodeiaco_WS.Cadastro_CWS {
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void cadastrarUsuarioCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    public delegate void cadastrarUsuarioCompletedEventHandler(object sender, cadastrarUsuarioCompletedEventArgs e);
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void evoluirPlanoCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class cadastrarUsuarioCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal cadastrarUsuarioCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public bool Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void loginUsuarioCompletedEventHandler(object sender, loginUsuarioCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class loginUsuarioCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal loginUsuarioCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public usuario Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((usuario)(this.results[0]));
+            }
+        }
+    }
 }
 
 #pragma warning restore 1591

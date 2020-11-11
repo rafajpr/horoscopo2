@@ -13,7 +13,8 @@ public class UsuarioWS {
 
     @WebMethod(operationName = "cadastrarUsuario")
     
-    public boolean cadastrarUsuario(@WebParam(name = "usuario") Usuario user) {
+    public boolean cadastrarUsuario(@WebParam(name = "user") Usuario user) {
+        System.out.println("Usuario eh null?: " + user == null);
         boolean success = usuariosDAO.adicionarUsuario(user);
         if(success){
             System.out.println("Cavaleiro cadastrado com sucesso!");

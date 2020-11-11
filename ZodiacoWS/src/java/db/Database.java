@@ -4,10 +4,11 @@ import java.util.ArrayList;
 import model.Usuario;
 
 public class Database {
-    private static final ArrayList<Usuario> usuarios = new ArrayList<Usuario>();
+    private ArrayList<Usuario> usuarios;
 
-    public static ArrayList<Usuario> getUsuarios() {
+    public ArrayList<Usuario> getUsuarios() {
+        if (usuarios == null)
+            usuarios = new ArrayList<Usuario>();
         return usuarios;
     }
-
 }
