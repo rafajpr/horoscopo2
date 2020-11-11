@@ -1,14 +1,13 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package db;
 
-/**
- *
- * @author Rafael
- */
+import java.util.ArrayList;
+import model.Usuario;
+
 public class Database {
-    
+    private static final ArrayList<Usuario> usuarios = new ArrayList<Usuario>();
+
+    public static ArrayList<Usuario> getUsuarios() {
+        return usuarios;
+    }
+
 }
