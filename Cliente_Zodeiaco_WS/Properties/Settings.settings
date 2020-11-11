@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Cliente_Zodeiaco_WS.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="Cliente_Zodeiaco_WS_cadastroWS_CadastroWS" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:8080/ZodiacoWS/CadastroWS</Value>
+    </Setting>
+    <Setting Name="Cliente_Zodeiaco_WS_CavaleiroOuroWS_CavaleiroOuroWS" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:8080/ZodiacoWS/CavaleiroOuroWS</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://ws/" targetNamespace="http://ws/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="msgDia" type="tns:msgDia" />
+  <xs:element name="msgDiaResponse" type="tns:msgDiaResponse" />
+  <xs:element name="qualCavaleiro" type="tns:qualCavaleiro" />
+  <xs:element name="qualCavaleiroResponse" type="tns:qualCavaleiroResponse" />
+  <xs:complexType name="msgDia">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="msgDiaResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:messageObject" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="messageObject">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="qualCavaleiro">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="signo" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="qualCavaleiroResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
