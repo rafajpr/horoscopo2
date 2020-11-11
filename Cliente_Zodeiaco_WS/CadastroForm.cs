@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Windows.Forms;
 
 namespace Cliente_Zodeiaco_WS
@@ -49,6 +50,14 @@ namespace Cliente_Zodeiaco_WS
         private void Signo_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void loginButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            LoginForm cadastro = new LoginForm();
+            cadastro.ShowDialog();
+            this.Close();
         }
     }
 }

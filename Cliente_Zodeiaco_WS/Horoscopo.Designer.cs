@@ -34,6 +34,7 @@
             this.ouroButton = new System.Windows.Forms.Button();
             this.yourNicknameLabel = new System.Windows.Forms.Label();
             this.nicknameLabel = new System.Windows.Forms.Label();
+            this.logoutButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // horoscopoLabel
@@ -94,11 +95,22 @@
             this.nicknameLabel.TabIndex = 5;
             this.nicknameLabel.Text = "Nickname";
             // 
+            // logoutButton
+            // 
+            this.logoutButton.Location = new System.Drawing.Point(16, 415);
+            this.logoutButton.Name = "logoutButton";
+            this.logoutButton.Size = new System.Drawing.Size(75, 23);
+            this.logoutButton.TabIndex = 6;
+            this.logoutButton.Text = "Logout";
+            this.logoutButton.UseVisualStyleBackColor = true;
+            this.logoutButton.Click += new System.EventHandler(this.logoutButton_Click);
+            // 
             // Horoscopo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.logoutButton);
             this.Controls.Add(this.nicknameLabel);
             this.Controls.Add(this.yourNicknameLabel);
             this.Controls.Add(this.ouroButton);
@@ -120,5 +132,6 @@
         private System.Windows.Forms.Button ouroButton;
         private System.Windows.Forms.Label yourNicknameLabel;
         private System.Windows.Forms.Label nicknameLabel;
+        private System.Windows.Forms.Button logoutButton;
     }
 }

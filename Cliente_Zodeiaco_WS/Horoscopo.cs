@@ -39,5 +39,14 @@ namespace Cliente_Zodeiaco_WS
 
             messageLabel.Text = message;
         }
+
+        private void logoutButton_Click(object sender, EventArgs e)
+        {
+            Session.User = null;
+            this.Hide();
+            LoginForm login = new LoginForm();
+            login.ShowDialog();
+            this.Close();
+        }
     }
 }

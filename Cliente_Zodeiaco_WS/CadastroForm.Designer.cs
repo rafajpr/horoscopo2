@@ -41,12 +41,14 @@
             this.label1 = new System.Windows.Forms.Label();
             this.emailLabel = new System.Windows.Forms.Label();
             this.emailTextBox = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.loginButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.messageObjectBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // Botao_Cadastro
             // 
-            this.Botao_Cadastro.Location = new System.Drawing.Point(365, 281);
+            this.Botao_Cadastro.Location = new System.Drawing.Point(374, 273);
             this.Botao_Cadastro.Name = "Botao_Cadastro";
             this.Botao_Cadastro.Size = new System.Drawing.Size(75, 23);
             this.Botao_Cadastro.TabIndex = 0;
@@ -99,7 +101,7 @@
             // label_confirma_cadastro
             // 
             this.label_confirma_cadastro.AutoSize = true;
-            this.label_confirma_cadastro.Location = new System.Drawing.Point(395, 316);
+            this.label_confirma_cadastro.Location = new System.Drawing.Point(404, 308);
             this.label_confirma_cadastro.Name = "label_confirma_cadastro";
             this.label_confirma_cadastro.Size = new System.Drawing.Size(10, 13);
             this.label_confirma_cadastro.TabIndex = 8;
@@ -142,11 +144,32 @@
             this.emailTextBox.Size = new System.Drawing.Size(121, 20);
             this.emailTextBox.TabIndex = 16;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(362, 374);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(101, 13);
+            this.label2.TabIndex = 17;
+            this.label2.Text = "Já possui cadastro?";
+            // 
+            // loginButton
+            // 
+            this.loginButton.Location = new System.Drawing.Point(374, 390);
+            this.loginButton.Name = "loginButton";
+            this.loginButton.Size = new System.Drawing.Size(75, 23);
+            this.loginButton.TabIndex = 18;
+            this.loginButton.Text = "Login";
+            this.loginButton.UseVisualStyleBackColor = true;
+            this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
+            // 
             // CadastroForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 453);
+            this.Controls.Add(this.loginButton);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.emailTextBox);
             this.Controls.Add(this.emailLabel);
             this.Controls.Add(this.label1);
@@ -180,6 +203,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label emailLabel;
         private System.Windows.Forms.TextBox emailTextBox;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button loginButton;
     }
 }
 
