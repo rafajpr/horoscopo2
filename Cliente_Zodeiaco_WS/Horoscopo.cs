@@ -30,14 +30,14 @@ namespace Cliente_Zodeiaco_WS
         {
             string message = cavaleiro.msgDia(user.signo);
 
-            messageLabel.Text = message;
+            messageRichTextBox.Text = message;
         }
 
         private void ouroButton_Click(object sender, EventArgs e)
         {
             string message = cavaleiro.qualCavaleiro(user.signo);
 
-            messageLabel.Text = message;
+            messageRichTextBox.Text = message;
         }
 
         private void logoutButton_Click(object sender, EventArgs e)
