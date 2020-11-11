@@ -18,6 +18,8 @@ public class Usuario implements Serializable{
         this.signo = signo;
         this.email = email;
     }
+    
+    public Usuario() { }
 
     public String getEmail() {
         return email;
@@ -50,10 +52,4 @@ public class Usuario implements Serializable{
     public void setPlano(String plano) {
         this.plano = plano;
     }
- 
-    public String getDailyHoroscope() throws IOException, MalformedURLException, ParseException{
-        MessageObject msg = new MessageObject();
-        return msg.getMessage(this.signo);
-    }
-
 }

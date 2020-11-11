@@ -17,6 +17,15 @@
   <message name="msgDiaResponse">
     <part name="parameters" element="tns:msgDiaResponse" />
   </message>
+  <message name="IOException">
+    <part name="fault" element="tns:IOException" />
+  </message>
+  <message name="MalformedURLException">
+    <part name="fault" element="tns:MalformedURLException" />
+  </message>
+  <message name="ParseException">
+    <part name="fault" element="tns:ParseException" />
+  </message>
   <portType name="CavaleiroOuroWS">
     <operation name="qualCavaleiro">
       <input wsam:Action="http://ws/CavaleiroOuroWS/qualCavaleiroRequest" message="tns:qualCavaleiro" />
@@ -25,6 +34,9 @@
     <operation name="msgDia">
       <input wsam:Action="http://ws/CavaleiroOuroWS/msgDiaRequest" message="tns:msgDia" />
       <output wsam:Action="http://ws/CavaleiroOuroWS/msgDiaResponse" message="tns:msgDiaResponse" />
+      <fault wsam:Action="http://ws/CavaleiroOuroWS/msgDia/Fault/IOException" name="IOException" message="tns:IOException" />
+      <fault wsam:Action="http://ws/CavaleiroOuroWS/msgDia/Fault/MalformedURLException" name="MalformedURLException" message="tns:MalformedURLException" />
+      <fault wsam:Action="http://ws/CavaleiroOuroWS/msgDia/Fault/ParseException" name="ParseException" message="tns:ParseException" />
     </operation>
   </portType>
   <binding name="CavaleiroOuroWSPortBinding" type="tns:CavaleiroOuroWS">
@@ -46,6 +58,15 @@
       <output>
         <soap:body use="literal" />
       </output>
+      <fault name="IOException">
+        <soap:fault use="literal" name="IOException" namespace="" />
+      </fault>
+      <fault name="MalformedURLException">
+        <soap:fault use="literal" name="MalformedURLException" namespace="" />
+      </fault>
+      <fault name="ParseException">
+        <soap:fault use="literal" name="ParseException" namespace="" />
+      </fault>
     </operation>
   </binding>
   <service name="CavaleiroOuroWS">
